@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Facebook style toastr</h1>
+  <p>Command example: <code>fbtoastr('success','Added Successfully','dark','3000')</code></p>
+  <p>success/error</p>
+  <p>message</p>
+  <p>dark/light (default: light)</p>
+  <p>millisecond (default: 3000 (3 seconds))</p>
+  <textarea name="command" id="command" cols="50" rows="10">success,Added Successfully,dark,3000</textarea>
+  <button onclick="submit()">Submit</button>
+</body>
+<script src="app.js"></script>
+<script>
+  function submit() {
+    const command = document.getElementById('command').value.split(',');
+    fbtoastr(command[0],command[1],command[2],command[3]);
+  }
+</script>
+</html>
